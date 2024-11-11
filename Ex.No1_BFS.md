@@ -16,7 +16,50 @@ To write a python program to implement Breadth first Search.
 
 
 
+Ex.No: 1 Implementation of Breadth First Search
+DATE: 10.02.2024
+REGISTER NUMBER : 212221060222
+AIM:
+To write a python program to implement Breadth first Search.
 
+Algorithm:
+Start the program
+Create the graph by using adjacency list representation
+Define a function dfs and take the set “visited” is empty
+Search start with initial node. Check the node is not visited then print the node.
+For each neighbor node, recursively invoke the bfs search.
+Call the dfs function by passing arguments visited, graph and starting node.
+Stop the program.
+Program:
+graph={
+    '2':['3','4'],
+    '3':['5'],
+    '4':['6','7'],
+    '6':[ ],
+    '5':['6'],
+    '7':['8'],
+    '8':[ ]
+}
+visited=[]
+queue=[]
+def bfs(visted,node,graph):
+    visited.append(node)
+    queue.append(node)
+    while queue:
+        m=queue.pop(0)
+        print(m)
+        for neighbour in graph[m]:
+            if neighbour not in visited:
+                visited.append(neighbour)
+                queue.append(neighbour)
+print("BFS order is")
+bfs(visited,'2',graph)
+
+Output:
+image
+
+Result:
+Thus the breadth first search order was found sucessfully.
 
 
 
